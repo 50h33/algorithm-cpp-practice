@@ -5,6 +5,7 @@
 - https://www.acmicpc.net/problem/2439
 - https://www.acmicpc.net/problem/10250
 - https://www.acmicpc.net/problem/2577
+- https://www.acmicpc.net/problem/3052
 
 ### while(cin >> a >> b)
 - https://www.acmicpc.net/problem/10951
@@ -78,3 +79,22 @@ while (num > 0) {
     ans[num % 10]++;
     num /= 10;
 }
+```
+
+### 서로 다른 개수 세기
+
+- https://www.acmicpc.net/problem/3052
+
+```cpp
+set<int> s;
+    
+for (int i = 0; i < 10; i++) {
+    int x;
+    cin >> x;
+    s.insert(x % 42);
+}
+
+cout << s.size() << '\n';
+```
+
+- 중복되지 않는 값의 개수를 구할 땐 set을 활용하자!
