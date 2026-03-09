@@ -7,17 +7,30 @@ int main() {
     cin >> a >> b >> c;
 	int num = a * b * c;
     string s = to_string(num);
-    for (int i = 0; i < s.size(); i++) {
-        if (s[i] == '0') ans[0]++;
-        else if (s[i] == '1') ans[1]++;
-        else if (s[i] == '2') ans[2]++;
-        else if (s[i] == '3') ans[3]++;
-        else if (s[i] == '4') ans[4]++;
-        else if (s[i] == '5') ans[5]++;
-        else if (s[i] == '6') ans[6]++;
-        else if (s[i] == '7') ans[7]++;
-        else if (s[i] == '8') ans[8]++;
-        else if (s[i] == '9') ans[9]++;
+
+    // 방법 1: 조건문 나열
+    // for (int i = 0; i < s.size(); i++) {
+    //     if (s[i] == '0') ans[0]++;
+    //     else if (s[i] == '1') ans[1]++;
+    //     else if (s[i] == '2') ans[2]++;
+    //     else if (s[i] == '3') ans[3]++;
+    //     else if (s[i] == '4') ans[4]++;
+    //     else if (s[i] == '5') ans[5]++;
+    //     else if (s[i] == '6') ans[6]++;
+    //     else if (s[i] == '7') ans[7]++;
+    //     else if (s[i] == '8') ans[8]++;
+    //     else if (s[i] == '9') ans[9]++;
+    // }
+
+    // 방법 2: for문과 -'0' 활용
+    for (char ch : s) {
+        ans[ch - '0']++;
+    }
+
+    // 방법 3: 숫자 연산으로 처리
+    while (num > 0) {
+        ans[num % 10]++;
+        num /= 10;
     }
 
     for (int i = 0; i <= 9; i++) {
