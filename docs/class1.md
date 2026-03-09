@@ -4,6 +4,7 @@
 - https://www.acmicpc.net/problem/25083
 - https://www.acmicpc.net/problem/2439
 - https://www.acmicpc.net/problem/10250
+- https://www.acmicpc.net/problem/2577
 
 ### while(cin >> a >> b)
 - https://www.acmicpc.net/problem/10951
@@ -60,3 +61,20 @@ int room = (n - 1) / h + 1;
 ```
 - n이 h의 배수일 때 0층이 버리기 때문에, 이를 해결하기 위해 (n - 1)을 사용하여 계산합니다.
 - %h 혹은 /h 연산을 한 후 +1을 해주어 올바른 층과 방 번호를 얻을 수 있습니다.
+
+### 연산 결과의 각 자릿수에 대한 빈도 계산
+- https://www.acmicpc.net/problem/2577
+
+```cpp
+// for문과 -'0' 활용
+for (char ch : s) {
+    ans[ch - '0']++;
+}
+```
+
+```cpp
+// 숫자 연산으로 처리
+while (num > 0) {
+    ans[num % 10]++;
+    num /= 10;
+}
